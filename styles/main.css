@@ -1,62 +1,61 @@
+
+/*/http://sass-lang.com/install*/
+
 body, html{
     padding:0;
     margin:0;
-}
-button{
-    border:none;
-    background-color: white;
-}
-body::after {
-    background-image: url("../pattern-dark.png");
-    background-repeat: repeat;
-    background-size: 400px;
-    content: "";
-    opacity: 0.05;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
+    height: 100%;
 }
 .container{
     width:800px;
     margin-left: auto;
     margin-right: auto;
 }
-.shadowed{
-    box-shadow: 0 2px 5px 0px black;
-}
-.header{
-    position:sticky;
+.header {
     width:100%;
+    padding-top:62px;
+    position: relative;
+    background-color: transparent;
+}
+.header .banner{
+    opacity: 1;
+    position: absolute;
+    top:0;
+    left:0;
     background-image: url("../banner.jpeg");
     background-position: center bottom;
-    padding-top:30px;
+    height:100%;
+    width:100%;
+    z-index:-1;
 }
-.collapsed{
+.header.collapsed{
     position: fixed;
     top:0;
-    padding-top:0;
-    margin-bottom:150px;
+    height: 49px;
+    overflow:hidden;
+    padding-top: 0px;
+    background-color:#fff;
 }
-.header.collapsed .picture,
-.header.collapsed .name,
-.header.collapsed .social{
-    display: none;
+.header.collapsed .banner{
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
 }
 .header .navigation {
     bottom:0px;
     padding: 7px;
     display: flex;
 }
-.header .navigation button{
+.header .navigation a{
     flex:1;
     margin:7px;
     padding: 10px 5px;
     border-radius:0;
+    background-color: #ffffff;
+    text-decoration: none;
+    color:black;
+    text-align: center;
 }
-.header .navigation button:hover{
+.header .navigation a:hover{
     background-color: lightcoral;
 }
 .header .picture{
@@ -66,6 +65,7 @@ body::after {
     border-radius: 50%;
     background-image: url("../picture.jpg");
     background-position: center;
+    background-size: contain;
 }
 .header .name{
     text-align: center;
@@ -103,10 +103,12 @@ body::after {
 .header,
 .header button,
 .header a,
-.header name,
-.header picture,
+.header .picture
 {
-    box-shadow: 0 2px 5px 0px black;
+    box-shadow: 0 1px 7px 0px black;
+}
+.header .name{
+    text-shadow: 0 1px 7px black;
 }
 .topic{
 
@@ -117,4 +119,14 @@ body::after {
 .topic .card{
     background-color: lightblue;
     padding:7px;
+}
+
+.header.collapsed .picture,
+.header.collapsed .name,
+.header.collapsed .social,
+.header.collapsed .navigation{
+    display: none;
+}
+.footer{
+    height:200px;
 }
