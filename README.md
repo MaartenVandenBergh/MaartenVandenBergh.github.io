@@ -1,2 +1,2 @@
-# MaartenVandenBergh.github.io
-Resume
+# Maarten Van den Bergh
+My personal website
