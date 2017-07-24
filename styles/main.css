@@ -36,6 +36,31 @@ body, html{
     padding-top: 0px;
     background-color:#fff;
 }
+@keyframes spotlight-in {
+    100%{
+        box-shadow: 0 0 30px 0 #fff7d0;
+        transform: scale(1.2);
+    }
+}
+@keyframes spotlight-out {
+    0%{
+        box-shadow: 0 0 30px 0 #fff7d0;
+        transform: rotate(360deg) scale(1.2);
+    }
+    100%{
+        transform: rotate(0deg) scale(1);
+    }
+}
+.header .picture{
+    animation-name: spotlight-out;
+    animation-duration:0.5s;
+    animation-direction:alternate;
+}
+.header .picture:hover{
+    animation-name: spotlight-in;
+    animation-duration:4s;
+    animation-fill-mode: forwards;
+}
 .header.collapsed .banner{
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
@@ -49,14 +74,22 @@ body, html{
     flex:1;
     margin:7px;
     padding: 10px 5px;
-    border-radius:0;
+    border-radius:5px;
     background-color: #ffffff;
     text-decoration: none;
     color:black;
     text-align: center;
 }
 .header .navigation a:hover{
-    background-color: lightcoral;
+    box-shadow:
+            0 1px 0px 0 gray,
+            0 2px 0px 0 gray,
+            0 3px 0px 0 gray;
+    transform: translateY(-3px);
+    transition: 
+        transform 0.2s,
+        box-shadow 0.2s
+    ;
 }
 .header .picture{
     margin: 0 auto 20px auto;
