@@ -11,7 +11,6 @@ body, html{
     font-family: 'Roboto', sans-serif;
     padding:0;
     margin:0;
-    height: 100%;
 }
 
 .header {
@@ -123,7 +122,9 @@ body, html{
 .header .navigation a i{
     display: block;
     text-align: center;
-    margin-right:5px;
+}
+.header .navigation a span{
+    margin-left:5px;
 }
 .header .navigation .scrollToTop{
     display: none;
@@ -169,11 +170,11 @@ body, html{
     margin:0;
     line-height: 49px;
     font-size:16px;
-    color:black;
     text-shadow: none;
     display: inline-block;
     text-align: left;
     vertical-align: top;
+    color:black;
 }
 .header .social{
     position: absolute;
