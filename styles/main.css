@@ -6,11 +6,6 @@
     margin-left: auto;
     margin-right: auto;
 }
-@media (max-width: 800px) {
-    .container {
-        width: auto;
-    }
-}
 
 body, html{
     font-family: 'Roboto', sans-serif;
@@ -123,6 +118,12 @@ body, html{
     text-decoration: none;
     color:black;
     text-align: center;
+    font-weight: bold;
+}
+.header .navigation a i{
+    display: block;
+    text-align: center;
+    margin-right:5px;
 }
 .header .navigation .scrollToTop{
     display: none;
@@ -218,4 +219,22 @@ body, html{
 
 .footer{
     height:200px;
+}
+@media (max-width: 800px) {
+    .container {
+        width: auto;
+    }
+}
+@media (max-width: 400px) {
+    .container {
+        width: auto;
+    }
+    .header .name span{
+        display: none;
+    }
+}
+@media (max-width: 510px) {
+    .header .navigation a span{
+        display: none;
+    }
 }
