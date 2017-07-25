@@ -7,23 +7,25 @@
     <title>HomeScreen</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Aubrey|Bahiana|Alegreya+SC|Bubblegum+Sans|Bungee|Permanent+Marker|Fjalla+One|Farsan|Rakkas|Roboto" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        
+    <div id="anchor"></div>
+    <div id="header" class="header">
         <div class="social">
             <a class="mail" href="mailto:"><i class="fa fa-envelope" aria-hidden="true"></i></a>
             <a class="facebook" href="http://facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a class="twitter" href="http://twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
         </div>
         <div class="picture"></div>
-        <label class="name">Maarten Van den Bergh</label>
+        <label class="name">Maarten <span>Van den Bergh</span></label>
         <div class="navigation container">
             <a href="#aboutme">About me</a>
             <a href="#projects">Projects</a>
             <a href="#education">Education</a>
             <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
+            <button class="scrollToTop" onclick="scrollToTop()"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
         </div>
         <div class="banner"></div>
     </div>

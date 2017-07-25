@@ -2,6 +2,7 @@
 /*/http://sass-lang.com/install*/
 
 body, html{
+    font-family: 'Roboto', sans-serif;
     padding:0;
     margin:0;
     height: 100%;
@@ -31,11 +32,13 @@ body, html{
 .header.collapsed{
     position: fixed;
     top:0;
-    height: 49px;
-    overflow:hidden;
     padding-top: 0px;
     background-color:#fff;
 }
+.header.collapsed.withNavigation .navigation a{
+    border:1px solid gray;
+}
+
 @keyframes spotlight-in {
     100%{
         box-shadow: 0 0 30px 0 #fff7d0;
@@ -51,7 +54,27 @@ body, html{
         transform: rotate(0deg) scale(1);
     }
 }
+.header,
+.header button,
+.header a,
+.header .picture
+{
+    box-shadow: 0 1px 7px 0px black;
+}
+.header.collapsed a,
+.header.collapsed .picture,
+.header.collapsed .social
+{
+    box-shadow: none;
+}
 .header .picture{
+    margin: 0 auto 20px auto;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-image: url("../picture.jpg");
+    background-position: center;
+    background-size: contain;
     animation-name: spotlight-out;
     animation-duration:0.5s;
     animation-direction:alternate;
@@ -61,24 +84,54 @@ body, html{
     animation-duration:4s;
     animation-fill-mode: forwards;
 }
+.header.collapsed .picture{
+    height: 30px;
+    width: 30px;
+    margin: 11px 11px 0 11px;
+    display: inline-block;
+}
+.header.collapsed .picture:hover{
+    animation: none;
+}
 .header.collapsed .banner{
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 }
 .header .navigation {
     bottom:0px;
-    padding: 7px;
+    display: flex;
+}
+.header.collapsed .navigation > *{
+    display: none;
+}
+.header.collapsed.withNavigation .navigation{
     display: flex;
 }
 .header .navigation a{
     flex:1;
     margin:7px;
-    padding: 10px 5px;
+    padding: 5px 5px;
     border-radius:5px;
     background-color: #ffffff;
     text-decoration: none;
     color:black;
     text-align: center;
+}
+.header .navigation .scrollToTop{
+    display: none;
+    position: fixed;
+    bottom:10px;
+    right: 10px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: rgb(234, 112, 100);
+}
+.header.collapsed .navigation .scrollToTop{
+    display: inline-block;
 }
 .header .navigation a:hover{
     box-shadow:
@@ -91,28 +144,35 @@ body, html{
         box-shadow 0.2s
     ;
 }
-.header .picture{
-    margin: 0 auto 20px auto;
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    background-image: url("../picture.jpg");
-    background-position: center;
-    background-size: contain;
-}
 .header .name{
+    line-height: 50px;
+    font-family: 'Bungee', cursive;
     text-align: center;
     color:white;
     font-size:50px;
     margin:20px 0 50px 0;
     display: block;
+    text-shadow: 0 1px 7px black;
 }
-.social{
+.header .name span{
+    display: inline-block;
+}
+.header.collapsed .name{
+    margin:0;
+    line-height: 49px;
+    font-size:16px;
+    color:black;
+    text-shadow: none;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+}
+.header .social{
     position: absolute;
     top:10px;
     right:10px;
 }
-.social a{
+.header .social a{
     color:white;
     display: inline-block;
     background-color: green;
@@ -124,42 +184,31 @@ body, html{
     line-height: 30px;
     margin-left:5px;
 }
-.social a.mail{
+.header .social a.mail{
     background-color: #ffd200;
 }
-.social a.facebook{
+.header .social a.facebook{
     background-color: #3b5998;
 }
-.social a.twitter{
+.header .social a.twitter{
     background-color: #1da1f2;
-}
-.header,
-.header button,
-.header a,
-.header .picture
-{
-    box-shadow: 0 1px 7px 0px black;
-}
-.header .name{
-    text-shadow: 0 1px 7px black;
 }
 .topic{
 
 }
+.header .name,
 .topic h1{
-    
+    font-family: 'Bungee', cursive;
+}
+.topic h1{
+    font-size: 24px;
 }
 .topic .card{
     background-color: lightblue;
     padding:7px;
 }
 
-.header.collapsed .picture,
-.header.collapsed .name,
-.header.collapsed .social,
-.header.collapsed .navigation{
-    display: none;
-}
+
 .footer{
     height:200px;
 }
