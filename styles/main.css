@@ -107,13 +107,12 @@ body, html{
 .header .navigation {
     bottom:0px;
     display: flex;
-    flex-wrap: wrap;
 }
-.header.collapsed .navigation > *{
+.header.collapsed .navigation > * {
     display: none;
 }
-.header.collapsed.withNavigation .navigation{
-    display: flex;
+.header.collapsed.withNavigation .navigation > * {
+    display: inline-block;
 }
 .header .navigation a{
     flex:1;
