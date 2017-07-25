@@ -229,7 +229,7 @@ body, html{
     .container {
         width: auto;
     }
-    .header .name span{
+    .header.collapsed .name span{
         display: none;
     }
 }
