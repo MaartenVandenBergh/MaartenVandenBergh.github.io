@@ -24,7 +24,7 @@ body, html{
     position: absolute;
     top:0;
     left:0;
-    background-image: url("../banner.jpeg");
+    background-image: url("../content/images/banner.jpeg");
     background-position: center bottom;
     height:100%;
     width:100%;
@@ -73,7 +73,7 @@ body, html{
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    background-image: url("../picture.jpg");
+    background-image: url("../content/images/picture.jpg");
     background-position: center;
     background-size: contain;
     animation-name: spotlight-out;
@@ -222,11 +222,10 @@ body, html{
     background-color: lightblue;
     padding:10px;
 }
-
-
 .footer{
     height:200px;
 }
+
 @media (max-width: 800px) {
     .container {
         width: auto;
