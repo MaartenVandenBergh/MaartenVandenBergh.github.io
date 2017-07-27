@@ -214,9 +214,11 @@ body{
         .card{
             background-color: lightblue;
             padding:10px;
+            margin: 0 $spacing-default-medium;
         }
         h1{
             font-family: $font-title;
+            margin: 0 $spacing-default-medium;
         }
     }
 }

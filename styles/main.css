@@ -167,9 +167,11 @@ html, body {
   margin-right: auto; }
   .content .topic .card {
     background-color: lightblue;
-    padding: 10px; }
+    padding: 10px;
+    margin: 0 10px; }
   .content .topic h1 {
-    font-family: "Bungee", cursive; }
+    font-family: "Bungee", cursive;
+    margin: 0 10px; }
 
 .footer {
   width: 800px;
