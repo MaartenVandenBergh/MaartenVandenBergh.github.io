@@ -1,0 +1,11 @@
+@media (max-width: 400px) {
+    .header{
+        &.collapsed{
+            .name{
+                span{
+                    display: none;
+                }
+            }
+        }
+    }
+}

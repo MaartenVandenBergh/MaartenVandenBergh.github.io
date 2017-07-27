@@ -1,0 +1,19 @@
+.header
+    .picture
+    label.name
+        |Maarten #[span Van den Bergh]
+    .navigation
+        each topic in topics
+            a(onclick=`scrollTo(${topic.id})`)
+                i.fa(class=topic.logo)
+                span=topic.title
+    .social
+        a.mail(href=`mailto:${topics.contact.email}`)
+            i.fa.fa-envelope(aria-hidden="true")
+        a.linkedin(href=topics.contact.linkedin)
+            i.fa.fa-linkedin(aria-hidden="true")
+        a.facebook(href=topics.contact.facebook)
+            i.fa.fa-facebook(aria-hidden="true")
+        a.twitter(href=topics.contact.twitter)
+            i.fa.fa-twitter(aria-hidden="true")
+    .banner

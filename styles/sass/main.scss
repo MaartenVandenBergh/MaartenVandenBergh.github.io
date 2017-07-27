@@ -1,0 +1,230 @@
+@import 'colours';
+@import 'fonts';
+@import 'images';
+@import 'animations';
+@import 'spacing';
+@import 'shared';
+
+$shadow-default: 0 1px 7px 0px $colour-shadow-default;
+$spacing-default-medium: 10px;
+$spacing-default-small: 5px;
+$spacing-default-large: 20px;
+$spacing-default-verylarge: 50px;
+$border-radius-default: 5px;
+
+html{
+    font-family: $font-main;
+    padding:0;
+    margin:0;
+    color: $colour-text-default-dark;
+}
+body{
+    @extend html;
+}
+.header{
+    width:100%;
+    padding-top:62px;
+    position: relative;
+    background-color: transparent;
+    box-shadow: $shadow-default;
+    a, button{
+       box-shadow: $shadow-default; 
+    }
+    .banner{
+        opacity: 1;
+        position: absolute;
+        top:0;
+        left:0;
+        background-image: $image-banner;
+        background-position: center bottom;
+        height:100%;
+        width:100%;
+        z-index:-1;
+    }
+    .picture{
+        box-shadow: $shadow-default;
+        margin: 0 auto $spacing-default-large auto;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-image: $image-picture;
+        background-position: center;
+        background-size: contain;
+        animation-name: spotlight-out;
+        animation-duration:0.5s;
+        animation-direction:alternate;
+        &:hover{
+            animation-name: spotlight-in;
+            animation-duration:4s;
+            animation-fill-mode: forwards;
+        }
+    }
+    .name{
+        line-height: 50px;
+        font-family: $font-logo;
+        text-align: center;
+        color:$colour-text-default-light;
+        font-size:50px;
+        margin:$spacing-default-verylarge 0 $spacing-default-verylarge 0;
+        display: block;
+        text-shadow: $shadow-default;
+        span{
+            display: inline-block;
+        }
+    }
+    .navigation{
+        @include container;
+        bottom:0px;
+        display: flex;
+        a{
+            flex:1;
+            margin: $spacing-default-medium $spacing-default-small;
+            padding: $spacing-default-small $spacing-default-small;
+            border-radius: $border-radius-default;
+            background-color: $colour-button-default;
+            text-decoration: none;
+            color:$colour-text-default-dark;
+            text-align: center;
+            font-weight: bold;
+            &:hover{
+                box-shadow:
+                        0 1px 0px 0 $colour-button-default-3d,
+                        0 2px 0px 0 $colour-button-default-3d,
+                        0 3px 0px 0 $colour-button-default-3d;
+                transform: translateY(-3px);
+                transition: 
+                    transform 0.2s,
+                    box-shadow 0.2s
+                ;
+            }
+            &:first-child{
+                margin-left: $spacing-default-medium;
+            }
+            &:last-child{
+                margin-right: $spacing-default-medium;
+            }
+            i{
+                display: block;
+                text-align: center; 
+            }
+            span{
+                margin-left: $spacing-default-small;
+            }
+        }
+        .scrollToTop{
+            display: none;
+            position: fixed;
+            bottom: $spacing-default-medium;
+            right: $spacing-default-medium;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: none;
+            outline: none;
+            color: $colour-text-default-light;
+            background-color: $colour-accent;
+            box-shadow: $shadow-default;
+        }
+    }
+    .social{
+        position: absolute;
+        top:$spacing-default-medium;
+        right:$spacing-default-medium;
+        a{
+            color:$colour-text-default-light;
+            display: inline-block;
+            border-radius: 50%;
+            width:30px;
+            height:30px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 30px;
+            margin-left:$spacing-default-small;
+            &.facebook{
+                background-color: $colour-brand-facebook;
+            }
+            &.mail{
+                background-color: $colour-brand-mail; 
+            }
+            &.twitter{
+                background-color: $colour-brand-twitter;
+            }
+            &.linkedin{
+                background-color: $colour-brand-linkedin;
+            }
+        }
+    }
+
+    &.collapsed{
+        position: fixed;
+        top:0;
+        padding-top: 0px;
+        background-color:$colour-header-default;
+        a, button{
+            box-shadow: none;
+        }
+        .banner{
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+        .name{
+            margin:0;
+            line-height: 49px;
+            font-size:16px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: left;
+            vertical-align: top;
+            color:$colour-text-default-dark;
+        }
+        .picture{
+            box-shadow: none;
+            height: 30px;
+            width: 30px;
+            margin: 11px 11px 0 11px;
+            display: inline-block;
+            &:hover{
+                animation: none;
+            }
+        }
+        .navigation{
+            .scrollToTop{
+                display: inline-block;
+            }
+            &>*{
+                display: none;
+            }
+        }
+
+        &.withNavigation{
+            .navigation{
+                a{
+                    border:1px solid $colour-border-default;
+                }
+                & > *{
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+.content{
+    @include container;
+    .topic{
+        .card{
+            background-color: lightblue;
+            padding:10px;
+        }
+        h1{
+            font-family: $font-title;
+        }
+    }
+}
+.footer{
+    @include container;
+    height:200px;
+}
+
+@import 'media/400px';
+@import 'media/510px';
+@import 'media/800px';

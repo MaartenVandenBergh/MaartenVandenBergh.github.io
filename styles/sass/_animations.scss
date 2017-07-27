@@ -1,0 +1,15 @@
+@keyframes spotlight-in {
+    100%{
+        box-shadow: 0 0 30px 0 #fff7d0;
+        transform: scale(1.2);
+    }
+}
+@keyframes spotlight-out {
+    0%{
+        box-shadow: 0 0 30px 0 #fff7d0;
+        transform: rotate(360deg) scale(1.2);
+    }
+    100%{
+        transform: rotate(0deg) scale(1);
+    }
+}

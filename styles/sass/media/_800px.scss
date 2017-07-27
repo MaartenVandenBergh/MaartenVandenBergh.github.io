@@ -1,0 +1,13 @@
+@media (max-width: 800px) {
+    .header{
+        .navigation{
+            @include container-fluid;
+        }
+    }
+    .content{
+        @include container-fluid;
+    }
+    .footer{
+        @include container-fluid;
+    }
+}

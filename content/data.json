@@ -1,0 +1,33 @@
+{
+    "topics" : {
+        "aboutme" : {
+            "id" : "aboutme",
+            "title": "About me",
+            "logo": "fa fa-address-card"
+        },
+        "projects" : {
+            "id" : "projects",
+            "title": "Projects",
+            "logo": "fa fa-tasks"
+        },
+        "experience" : {
+            "id": "experience",
+            "title": "Experience",
+            "logo": "fa fa-building"
+        },
+        "education" : {
+            "id": "education",
+            "title": "Education",
+            "logo": "fa fa-graduation-cap"
+        },
+        "contact" : {
+            "id": "contact",
+            "title": "Contact",
+            "logo": "fa fa-comment",
+            "email" : "maarten.vandenbergh.1990@gmail.com",
+            "facebook" : "https://facebook.com",
+            "twitter" : "https://twitter.com",
+            "linkedin" : "https://linkedin.com"
+        }
+    }
+}
