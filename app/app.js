@@ -4,6 +4,17 @@ const COLLAPSED_CLASSNAME = "collapsed";
 const scrollToTop = () => {
     window.scrollTo(0,0);
 }
+const scrollTo = (element) => {
+    window.removeEventListener("scroll", scrollEventHandler);
+    const header = document.getElementsByClassName("header")[0];
+    if(header.classList.contains("withNavigation")){
+        header.classList.remove("withNavigation");
+    }
+    element.scrollIntoView();
+    const headerHeight = document.getElementsByClassName("header")[0].clientHeight;
+    window.scrollBy(0, -headerHeight);
+    window.addEventListener("scroll", scrollEventHandler);
+}
 
 const update = (time) => {
     if(time > previousFrameTime + 100){
@@ -49,9 +60,10 @@ const update = (time) => {
 
 let previousOffset = 0;
 let previousFrameTime = 0;
-window.onscroll = (event) => {
+const scrollEventHandler = (event) => {
     requestAnimationFrame(update);
 }
+window.addEventListener("scroll", scrollEventHandler);
 
 console.log("js loaded");
 
