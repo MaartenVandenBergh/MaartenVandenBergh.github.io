@@ -1,0 +1,17 @@
+mixin projectCard(name, image)
+    .projectCard
+        .employer employer
+        .body
+            img(src=image)
+            .name=name
+            .detail
+                b Role: 
+                |Developer/Analyst
+            .detail
+                b Time: 
+                |2015-2017, 2 years
+            .detail
+                b Tech: 
+                |React, Redux, MongoDB, NodeJs, Webcomponents
+        .externalEmployer external
+        .client client

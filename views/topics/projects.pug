@@ -1,5 +1,13 @@
 include ../mixins/topic
+include ../mixins/cards
 +topic(topics.projects)
-    |hheadahdaohoadohadhadhad dadad adadadadaohdohababbadajdbj
-    |aafafaaf afafa afaf afafafafafa afafafafafaa
-    |fafafafafaf af afafafafaf afafafa afafafaf afafa.
+    .kanban
+        .lane
+            .title IN PROGRESS
+            .board
+                +projectCard("P1", "./content/images/pattern.png")
+                +projectCard("P2", "./content/images/pattern.png")
+        .lane
+            .title DONE
+            .board
+                +projectCard("P3", "./content/images/pattern.png")

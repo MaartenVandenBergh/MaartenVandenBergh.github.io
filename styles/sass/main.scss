@@ -213,12 +213,83 @@ body{
     .topic{
         .card{
             background-color: lightblue;
-            padding:10px;
             margin: 0 $spacing-default-medium;
         }
         h1{
             font-family: $font-title;
             margin: 0 $spacing-default-medium;
+        }
+    }
+    .kanban{
+        display: flex;
+        flex-direction: column;
+        .lane{
+            display: flex;
+            flex-direction: row;
+            border: solid black;
+            border-width: 1px 0 0 0;
+            .title{
+                writing-mode: vertical-rl;
+                padding: $spacing-default-medium;
+            }
+            .board{
+                flex:1;
+                display: flex;
+                flex-wrap: wrap;
+                padding: $spacing-default-medium /2;
+                .projectCard{
+                    margin:$spacing-default-medium /2;
+                }
+            }
+        }
+        .lane:last-child{
+            border-bottom-width: 1px;
+        }
+    }
+    .projectCard{
+        display: flex;
+        width: 250px;
+        height:200px;
+        border-radius: $border-radius-default;
+        background: white;
+        .employer{
+            color: $colour-text-default-light;
+            writing-mode: vertical-rl;
+            background-color: orange;
+            width:$spacing-default-large;
+            text-align: center;
+            border-radius: $border-radius-default 0 0 $border-radius-default;
+        }
+        .body{
+            flex:1;
+            img{
+                width:100%;
+                height: 40%;
+            }
+            .name{
+                font-weight: bold;
+                padding: $spacing-default-small;
+            }
+            .detail{
+                font-size: 10px;
+                padding: $spacing-default-small $spacing-default-small 0 $spacing-default-small;
+            }
+        }
+        .externalEmployer{
+            color: $colour-text-default-light;
+            writing-mode: vertical-rl;
+            background-color: blue;
+            width:$spacing-default-large;
+            margin-left:-$spacing-default-large;
+            text-align: center;
+        }
+        .client{
+            color: $colour-text-default-light;
+            writing-mode: vertical-rl;
+            background-color: red;
+            width:$spacing-default-large;
+            text-align: center;
+            border-radius: 0 $border-radius-default $border-radius-default 0;
         }
     }
 }
