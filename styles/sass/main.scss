@@ -211,10 +211,6 @@ body{
 .content{
     @include container;
     .topic{
-        .card{
-            background-color: lightblue;
-            margin: 0 $spacing-default-medium;
-        }
         h1{
             font-family: $font-title;
             margin: 0 $spacing-default-medium;
@@ -227,10 +223,11 @@ body{
             display: flex;
             flex-direction: row;
             border: solid black;
-            border-width: 1px 0 0 0;
+            border-width: 2px 0 0 0;
             .title{
                 writing-mode: vertical-rl;
                 padding: $spacing-default-medium;
+                background-color: lightblue;
             }
             .board{
                 flex:1;
@@ -242,20 +239,24 @@ body{
                 }
             }
         }
+        .lane:first-child{
+            
+        }
         .lane:last-child{
-            border-bottom-width: 1px;
+            border: solid gray;
+            border-width: 2px 0;
         }
     }
     .projectCard{
         display: flex;
-        width: 250px;
-        height:200px;
+        width: 240px;
+        height:210px;
         border-radius: $border-radius-default;
         background: white;
+        box-shadow: $shadow-default;
         .employer{
             color: $colour-text-default-light;
             writing-mode: vertical-rl;
-            background-color: orange;
             width:$spacing-default-large;
             text-align: center;
             border-radius: $border-radius-default 0 0 $border-radius-default;

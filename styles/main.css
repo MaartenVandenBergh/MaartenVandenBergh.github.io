@@ -165,9 +165,6 @@ html, body {
   width: 800px;
   margin-left: auto;
   margin-right: auto; }
-  .content .topic .card {
-    background-color: lightblue;
-    margin: 0 10px; }
   .content .topic h1 {
     font-family: "Bungee", cursive;
     margin: 0 10px; }
@@ -178,10 +175,11 @@ html, body {
       display: flex;
       flex-direction: row;
       border: solid black;
-      border-width: 1px 0 0 0; }
+      border-width: 2px 0 0 0; }
       .content .kanban .lane .title {
         writing-mode: vertical-rl;
-        padding: 10px; }
+        padding: 10px;
+        background-color: lightblue; }
       .content .kanban .lane .board {
         flex: 1;
         display: flex;
@@ -190,17 +188,18 @@ html, body {
         .content .kanban .lane .board .projectCard {
           margin: 5px; }
     .content .kanban .lane:last-child {
-      border-bottom-width: 1px; }
+      border: solid gray;
+      border-width: 2px 0; }
   .content .projectCard {
     display: flex;
-    width: 250px;
-    height: 200px;
+    width: 240px;
+    height: 210px;
     border-radius: 5px;
-    background: white; }
+    background: white;
+    box-shadow: 0 1px 7px 0px black; }
     .content .projectCard .employer {
       color: white;
       writing-mode: vertical-rl;
-      background-color: orange;
       width: 20px;
       text-align: center;
       border-radius: 5px 0 0 5px; }
