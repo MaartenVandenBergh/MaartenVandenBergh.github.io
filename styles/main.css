@@ -170,6 +170,9 @@ html, body {
     margin: 0 10px; }
   .content .section .topic .card {
     margin: 0 10px 20px 10px; }
+  .content .section .topic#experience .card {
+    margin: 50px auto;
+    width: 500px; }
 
 .content .section .kanban {
   display: flex;
@@ -255,6 +258,24 @@ html, body {
                 }*/ }
     .content .section .projectCard:hover .body .detail:last-child {
       height: 100%; }
+
+.content .section svg {
+  margin-top: 25px; }
+
+.content .section .node-container {
+  height: 0;
+  display: flex; }
+  .content .section .node-container .node {
+    margin-top: -50px;
+    margin-left: -25px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: grey; }
+  .content .section .node-container:nth-child(3) {
+    justify-content: flex-end; }
+    .content .section .node-container:nth-child(3) .node {
+      margin-right: -25px; }
 
 .footer {
   width: 900px;

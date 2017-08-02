@@ -215,6 +215,12 @@ body{
             .card{
                 margin: 0 $spacing-default-medium 20px $spacing-default-medium;
             }
+            &#experience{
+                .card{
+                    margin: 50px auto;
+                    width: 500px;
+                }
+            }
         }
         .kanban{
             display: flex;
@@ -319,6 +325,27 @@ body{
                     height: 100%;
                 }
                 
+            }
+        }
+        svg{
+            margin-top:25px;
+        }
+        .node-container{
+            height:0;
+            display: flex;
+            .node{
+                margin-top:-50px;
+                margin-left:-25px;
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                background-color: grey;
+            }
+            &:nth-child(3){
+                justify-content: flex-end;
+                .node{
+                    margin-right:-25px;
+                }
             }
         }
     }
