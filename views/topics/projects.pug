@@ -1,15 +1,16 @@
 include ../mixins/topic
 include ../mixins/cards
-+topic(topics.projects)
-    .kanban
-        .lane
-            .title IN PROGRESS
-            .board
-                +projectCard("P1", "./content/images/pattern.png")
-                +projectCard("P2", "./content/images/pattern.png")
-        .lane
-            .title DONE
-            .board
-                +projectCard("P3", "./content/images/pattern.png")
-                +projectCard("P3", "./content/images/pattern.png")
-                +projectCard("P3", "./content/images/pattern.png")
+.section
+    +topic(topics.projects)
+        .kanban
+            .lane
+                .title IN PROGRESS
+                .board
+                    +projectCard("P1", "./content/images/pattern.png")
+                    +projectCard("P2", "./content/images/pattern.png")
+            .lane
+                .title DONE
+                .board
+                    +projectCard("P3", "./content/images/pattern.png")
+                    +projectCard("P3", "./content/images/pattern.png")
+                    +projectCard("P3", "./content/images/pattern.png")

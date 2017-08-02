@@ -62,7 +62,7 @@ html, body {
     .header .name span {
       display: inline-block; }
   .header .navigation {
-    width: 800px;
+    width: 900px;
     margin-left: auto;
     margin-right: auto;
     bottom: 0px;
@@ -161,114 +161,119 @@ html, body {
     .header.collapsed.withNavigation .navigation > * {
       display: inline-block; }
 
-.content {
-  width: 800px;
+.content .section .topic {
+  width: 900px;
   margin-left: auto;
   margin-right: auto; }
-  .content .topic h1 {
+  .content .section .topic h1 {
     font-family: "Bungee", cursive;
     margin: 0 10px; }
-  .content .kanban {
+  .content .section .topic .card {
+    margin: 0 10px 20px 10px; }
+
+.content .section .kanban {
+  display: flex;
+  flex-direction: column; }
+  .content .section .kanban .lane {
     display: flex;
-    flex-direction: column; }
-    .content .kanban .lane {
+    flex-direction: row; }
+    .content .section .kanban .lane .title {
+      writing-mode: vertical-rl;
+      padding: 10px;
+      width: 18px; }
+    .content .section .kanban .lane .board {
+      flex: 1;
       display: flex;
-      flex-direction: row;
-      border: solid black;
-      border-width: 2px 0 0 0; }
-      .content .kanban .lane .title {
-        writing-mode: vertical-rl;
-        padding: 10px;
-        width: 18px; }
-      .content .kanban .lane .board {
-        flex: 1;
-        display: flex;
-        flex-wrap: wrap;
-        padding: 5px; }
-        .content .kanban .lane .board .projectCard {
-          margin: 5px; }
-    .content .kanban .lane:last-child {
-      border: solid gray;
-      border-width: 2px 0; }
-  .content .projectCard {
-    overflow: hidden;
-    display: flex;
-    width: 240px;
-    height: 210px;
-    border-radius: 5px;
-    background: white;
-    box-shadow: 0 1px 7px 0px black; }
-    .content .projectCard .employer {
-      background-color: orange;
-      color: white;
-      writing-mode: vertical-rl;
-      width: 20px;
-      text-align: center;
-      border-radius: 5px 0 0 5px; }
-    .content .projectCard .body {
-      transition: margin 0.5s;
-      flex: 1; }
-      .content .projectCard .body img {
-        width: 100%;
-        height: 40%;
-        display: block; }
-      .content .projectCard .body .name {
-        font-weight: bold;
-        padding: 5px; }
-      .content .projectCard .body .detail {
-        font-size: 13px;
-        padding: 5px 5px 0 5px; }
-    .content .projectCard .externalEmployer {
-      color: white;
-      writing-mode: vertical-rl;
-      background-color: blue;
-      width: 20px;
-      margin-left: -20px;
-      text-align: center; }
-    .content .projectCard .client {
-      color: white;
-      writing-mode: vertical-rl;
-      background-color: red;
-      width: 20px;
-      text-align: center;
-      border-radius: 0 5px 5px 0; }
-  .content .projectCard:hover {
-    overflow: hidden; }
-    .content .projectCard:hover .body {
-      margin-top: -130%;
-      transition: margin 0.5s;
-      /*
-            img{
-                margin-top: -42%;
-                transition: margin 0.5s ease-in-out;
-            }
-            .name{
-                display: none;
-            }
-            .detail:not(:last-child){
-                display: none;
-            }*/ }
-      .content .projectCard:hover .body .detail:last-child {
-        height: 100%; }
+      flex-wrap: wrap;
+      padding: 5px; }
+      .content .section .kanban .lane .board .projectCard {
+        margin: 5px; }
+  .content .section .kanban .lane:first-child .title {
+    text-align: right; }
+  .content .section .kanban .lane:last-child {
+    border: solid gray;
+    border-width: 2px 0 0 0; }
+
+.content .section .projectCard {
+  overflow: hidden;
+  display: flex;
+  width: 240px;
+  height: 210px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 1px 7px 0px black; }
+  .content .section .projectCard .employer {
+    background-color: orange;
+    color: white;
+    writing-mode: vertical-rl;
+    width: 20px;
+    text-align: center;
+    border-radius: 5px 0 0 5px; }
+  .content .section .projectCard .body {
+    transition: margin 0.5s;
+    flex: 1; }
+    .content .section .projectCard .body img {
+      width: 100%;
+      height: 40%;
+      display: block; }
+    .content .section .projectCard .body .name {
+      font-weight: bold;
+      padding: 5px; }
+    .content .section .projectCard .body .detail {
+      font-size: 13px;
+      padding: 5px 5px 0 5px; }
+  .content .section .projectCard .externalEmployer {
+    color: white;
+    writing-mode: vertical-rl;
+    background-color: blue;
+    width: 20px;
+    margin-left: -20px;
+    text-align: center; }
+  .content .section .projectCard .client {
+    color: white;
+    writing-mode: vertical-rl;
+    background-color: red;
+    width: 20px;
+    text-align: center;
+    border-radius: 0 5px 5px 0; }
+
+.content .section .projectCard:hover {
+  overflow: hidden; }
+  .content .section .projectCard:hover .body {
+    margin-top: -130%;
+    transition: margin 0.5s;
+    /*
+                img{
+                    margin-top: -42%;
+                    transition: margin 0.5s ease-in-out;
+                }
+                .name{
+                    display: none;
+                }
+                .detail:not(:last-child){
+                    display: none;
+                }*/ }
+    .content .section .projectCard:hover .body .detail:last-child {
+      height: 100%; }
 
 .footer {
-  width: 800px;
+  width: 900px;
   margin-left: auto;
   margin-right: auto;
   height: 200px; }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .header.collapsed .name span {
     display: none; } }
 
-@media (max-width: 510px) {
+@media (max-width: 560px) {
   .header .navigation a span {
     display: none; } }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .header .navigation {
     width: auto; }
-  .content {
+  .content .section .topic {
     width: auto; }
   .footer {
     width: auto; } }

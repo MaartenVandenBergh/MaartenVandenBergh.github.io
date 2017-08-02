@@ -1,4 +1,5 @@
-@media (max-width: 510px) {
+@import 'spacing';
+@media (max-width: $spacing-container / 2 + 110px) {
     .header{
         .navigation{
             a{

@@ -6,10 +6,6 @@
 @import 'shared';
 
 $shadow-default: 0 1px 7px 0px $colour-shadow-default;
-$spacing-default-medium: 10px;
-$spacing-default-small: 5px;
-$spacing-default-large: 20px;
-$spacing-default-verylarge: 50px;
 $border-radius-default: 5px;
 
 html{
@@ -209,116 +205,121 @@ body{
     }
 }
 .content{
-    @include container;
-    .topic{
-        h1{
-            font-family: $font-title;
-            margin: 0 $spacing-default-medium;
-        }
-    }
-    .kanban{
-        display: flex;
-        flex-direction: column;
-        .lane{
-            display: flex;
-            flex-direction: row;
-            border: solid black;
-            border-width: 2px 0 0 0;
-            .title{
-                writing-mode: vertical-rl;
-                padding: $spacing-default-medium;
-                width: 18px;
+    .section{
+        .topic{
+            @include container;
+            h1{
+                font-family: $font-title;
+                margin: 0 $spacing-default-medium;
             }
-            .board{
-                flex:1;
+            .card{
+                margin: 0 $spacing-default-medium 20px $spacing-default-medium;
+            }
+        }
+        .kanban{
+            display: flex;
+            flex-direction: column;
+            .lane{
                 display: flex;
-                flex-wrap: wrap;
-                padding: $spacing-default-medium /2;
-                .projectCard{
-                    margin:$spacing-default-medium /2;
+                flex-direction: row;
+                .title{
+                    writing-mode: vertical-rl;
+                    padding: $spacing-default-medium;
+                    width: 18px;
+                }
+                .board{
+                    flex:1;
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: $spacing-default-medium /2;
+                    .projectCard{
+                        margin:$spacing-default-medium /2;
+                    }
                 }
             }
-        }
-        .lane:first-child{
-            
-        }
-        .lane:last-child{
-            border: solid gray;
-            border-width: 2px 0;
-        }
-    }
-    .projectCard{
-        overflow:hidden;
-        display: flex;
-        width: 240px;
-        height:210px;
-        border-radius: $border-radius-default;
-        background: white;
-        box-shadow: $shadow-default;
-        .employer{
-            background-color: orange;
-            color: $colour-text-default-light;
-            writing-mode: vertical-rl;
-            width:$spacing-default-large;
-            text-align: center;
-            border-radius: $border-radius-default 0 0 $border-radius-default;
-        }
-        .body{
-            transition: margin 0.5s;
-            flex:1;
-            img{
-                width:100%;
-                height: 40%;
-                display: block;
+            .lane:first-child{
+                .title{
+                    text-align: right;
+                }
             }
-            .name{
-                font-weight: bold;
-                padding: $spacing-default-small;
-            }
-            .detail{
-                font-size: 13px;
-                padding: $spacing-default-small $spacing-default-small 0 $spacing-default-small;
-            }
-            .detail:last-child{
+            .lane:last-child{
+                border: solid gray;
+                border-width: 2px 0 0 0;
             }
         }
-        .externalEmployer{
-            color: $colour-text-default-light;
-            writing-mode: vertical-rl;
-            background-color: blue;
-            width:$spacing-default-large;
-            margin-left:-$spacing-default-large;
-            text-align: center;
+        .projectCard{
+            overflow:hidden;
+            display: flex;
+            width: 240px;
+            height:210px;
+            border-radius: $border-radius-default;
+            background: white;
+            box-shadow: $shadow-default;
+            .employer{
+                background-color: orange;
+                color: $colour-text-default-light;
+                writing-mode: vertical-rl;
+                width:$spacing-default-large;
+                text-align: center;
+                border-radius: $border-radius-default 0 0 $border-radius-default;
+            }
+            .body{
+                transition: margin 0.5s;
+                flex:1;
+                img{
+                    width:100%;
+                    height: 40%;
+                    display: block;
+                }
+                .name{
+                    font-weight: bold;
+                    padding: $spacing-default-small;
+                }
+                .detail{
+                    font-size: 13px;
+                    padding: $spacing-default-small $spacing-default-small 0 $spacing-default-small;
+                }
+                .detail:last-child{
+                }
+            }
+            .externalEmployer{
+                color: $colour-text-default-light;
+                writing-mode: vertical-rl;
+                background-color: blue;
+                width:$spacing-default-large;
+                margin-left:-$spacing-default-large;
+                text-align: center;
+            }
+            .client{
+                color: $colour-text-default-light;
+                writing-mode: vertical-rl;
+                background-color: red;
+                width:$spacing-default-large;
+                text-align: center;
+                border-radius: 0 $border-radius-default $border-radius-default 0;
+            }
         }
-        .client{
-            color: $colour-text-default-light;
-            writing-mode: vertical-rl;
-            background-color: red;
-            width:$spacing-default-large;
-            text-align: center;
-            border-radius: 0 $border-radius-default $border-radius-default 0;
-        }
-    }
-    .projectCard:hover{
-        overflow: hidden;
-        .body{
-            margin-top: -130%;
-            transition: margin 0.5s;
-            /*
-            img{
-                margin-top: -42%;
-                transition: margin 0.5s ease-in-out;
+        .projectCard:hover{
+            overflow: hidden;
+            .body{
+                margin-top: -130%;
+                transition: margin 0.5s;
+                /*
+                img{
+                    margin-top: -42%;
+                    transition: margin 0.5s ease-in-out;
+                }
+                .name{
+                    display: none;
+                }
+                .detail:not(:last-child){
+                    display: none;
+                }*/
+                .detail:last-child{
+                    height: 100%;
+                }
+                
             }
-            .name{
-                display: none;
-            }
-            .detail:not(:last-child){
-                display: none;
-            }*/
-            .detail:last-child{
-                height: 100%;
-            }
-            
         }
     }
 }
@@ -327,6 +328,6 @@ body{
     height:200px;
 }
 
-@import 'media/450px';
-@import 'media/510px';
-@import 'media/800px';
+@import 'media/no-space-for-text-collapsed';
+@import 'media/no-space-for-text';
+@import 'media/container-width';

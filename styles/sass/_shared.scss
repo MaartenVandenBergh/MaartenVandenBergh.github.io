@@ -1,5 +1,6 @@
+@import 'spacing';
 @mixin container{
-    width:800px;
+    width:$spacing-container;
     margin-left: auto;
     margin-right: auto;
 }

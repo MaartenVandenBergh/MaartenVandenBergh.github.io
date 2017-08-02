@@ -1,4 +1,5 @@
-@media (max-width: 450px) {
+@import 'spacing';
+@media (max-width: $spacing-container / 2 + 50px) {
     .header{
         &.collapsed{
             .name{

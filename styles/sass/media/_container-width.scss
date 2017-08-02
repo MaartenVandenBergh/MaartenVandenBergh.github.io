@@ -1,11 +1,16 @@
-@media (max-width: 800px) {
+@import 'spacing';
+@media (max-width: $spacing-container) {
     .header{
         .navigation{
             @include container-fluid;
         }
     }
     .content{
-        @include container-fluid;
+        .section{
+            .topic{
+            @include container-fluid;
+            }
+        }
     }
     .footer{
         @include container-fluid;
