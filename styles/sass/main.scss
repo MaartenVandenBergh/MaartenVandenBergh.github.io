@@ -227,7 +227,7 @@ body{
             .title{
                 writing-mode: vertical-rl;
                 padding: $spacing-default-medium;
-                background-color: lightblue;
+                width: 18px;
             }
             .board{
                 flex:1;
@@ -248,6 +248,7 @@ body{
         }
     }
     .projectCard{
+        overflow:hidden;
         display: flex;
         width: 240px;
         height:210px;
@@ -255,6 +256,7 @@ body{
         background: white;
         box-shadow: $shadow-default;
         .employer{
+            background-color: orange;
             color: $colour-text-default-light;
             writing-mode: vertical-rl;
             width:$spacing-default-large;
@@ -262,18 +264,22 @@ body{
             border-radius: $border-radius-default 0 0 $border-radius-default;
         }
         .body{
+            transition: margin 0.5s;
             flex:1;
             img{
                 width:100%;
                 height: 40%;
+                display: block;
             }
             .name{
                 font-weight: bold;
                 padding: $spacing-default-small;
             }
             .detail{
-                font-size: 10px;
+                font-size: 13px;
                 padding: $spacing-default-small $spacing-default-small 0 $spacing-default-small;
+            }
+            .detail:last-child{
             }
         }
         .externalEmployer{
@@ -291,6 +297,28 @@ body{
             width:$spacing-default-large;
             text-align: center;
             border-radius: 0 $border-radius-default $border-radius-default 0;
+        }
+    }
+    .projectCard:hover{
+        overflow: hidden;
+        .body{
+            margin-top: -130%;
+            transition: margin 0.5s;
+            /*
+            img{
+                margin-top: -42%;
+                transition: margin 0.5s ease-in-out;
+            }
+            .name{
+                display: none;
+            }
+            .detail:not(:last-child){
+                display: none;
+            }*/
+            .detail:last-child{
+                height: 100%;
+            }
+            
         }
     }
 }
