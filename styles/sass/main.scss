@@ -18,6 +18,7 @@ body{
     @extend html;
 }
 .header{
+    z-index: 2;
     width:100%;
     padding-top:62px;
     position: relative;
@@ -324,7 +325,6 @@ body{
                 .detail:last-child{
                     height: 100%;
                 }
-                
             }
         }
         svg{
@@ -340,6 +340,7 @@ body{
                 width: 100px;
                 border-radius: 50%;
                 background-color: grey;
+                z-index: 1;
             }
             &:nth-child(3){
                 justify-content: flex-end;
